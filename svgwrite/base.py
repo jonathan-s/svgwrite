@@ -66,6 +66,9 @@ class BaseElement(object):
             self._parameter.profile = profile
 
         self.attribs = dict()
+        data = extra.pop('data', None)
+        if data:
+            self.update(data)
         self.update(extra)
         self.elements = list()
 
